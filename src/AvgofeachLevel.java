@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Queue;
 
 public class AvgofeachLevel {
-   public static List<Double> averageOfLevels(TREES.AvgofeachLevel.TreeNode root) {
+   public static List<Double> averageOfLevels(AvgofeachLevel root) {
       List<Double> result = new LinkedList();
       if (root == null) {
          return result;
       } else {
-         Queue<TREES.AvgofeachLevel.TreeNode> queue = new LinkedList();
+         Queue<AvgofeachLevel> queue = new LinkedList();
          queue.offer(root);
 
          while(!queue.isEmpty()) {

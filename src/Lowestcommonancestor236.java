@@ -1,12 +1,12 @@
 package TREES;
 
 public class Lowestcommonancestor236 {
-   public TREES.Lowestcommonancestor236.TreeNode lowestCommonAncestor(TREES.Lowestcommonancestor236.TreeNode root, TREES.Lowestcommonancestor236.TreeNode p, TREES.Lowestcommonancestor236.TreeNode q) {
+   public Lowestcommonancestor236 lowestCommonAncestor(Lowestcommonancestor236 root, Lowestcommonancestor236 p,Lowestcommonancestor236 q) {
       if (root == null) {
          return null;
       } else if (root != p && root != q) {
-         TREES.Lowestcommonancestor236.TreeNode left = this.lowestCommonAncestor(root.left, p, q);
-         TREES.Lowestcommonancestor236.TreeNode right = this.lowestCommonAncestor(root.right, p, q);
+         Lowestcommonancestor236 left = this.lowestCommonAncestor(root, p, q);
+         Lowestcommonancestor236 right = this.lowestCommonAncestor(root, p, q);
          if (left != null && right != null) {
             return root;
          } else {
