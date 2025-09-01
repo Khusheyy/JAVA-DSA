@@ -1,4 +1,4 @@
-package TREES;
+package trees;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class AvgofeachLevel {
             new LinkedList();
 
             for(int i = 0; i < levelsize; ++i) {
-               TREES.AvgofeachLevel.TreeNode currnode = (TREES.AvgofeachLevel.TreeNode)queue.poll();
+               TreeNode currnode = (TREES.AvgofeachLevel.TreeNode)queue.poll();
                avg += (double)currnode.val;
                if (currnode.left != null) {
                   queue.offer(currnode.left);
