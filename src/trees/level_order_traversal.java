@@ -5,9 +5,13 @@ import java.util.List;
 import java.util.Queue;
 import trees.TreeNode;
 
-public class AvgofeachLevel {
-   public static List<Double> averageOfLevels(TreeNode root) {
-      List<Double> result = new LinkedList();
+public class level_order_traversal {
+   public static void main(String[] args) {
+      System.out.println("helloooo khusheyyy");
+   }
+
+   public static List<List<Integer>> levelOrder(TreeNode root) {
+      List<List<Integer>> result = new LinkedList();
       if (root == null) {
          return result;
       } else {
@@ -16,12 +20,11 @@ public class AvgofeachLevel {
 
          while(!queue.isEmpty()) {
             int levelsize = queue.size();
-            double avg = 0.0D;
-            new LinkedList();
+            List<Integer> currlevel = new LinkedList();
 
             for(int i = 0; i < levelsize; ++i) {
                TreeNode currnode = (TreeNode)queue.poll();
-               avg += (double)currnode.val;
+               currlevel.add(currnode.val);
                if (currnode.left != null) {
                   queue.offer(currnode.left);
                }
@@ -31,16 +34,10 @@ public class AvgofeachLevel {
                }
             }
 
-            avg /= (double)levelsize;
-            result.add(avg);
+            result.add(currlevel);
          }
 
          return result;
       }
-   }
-
-   public static void main(String[] args) {
-      System.out.println("sayy myyyy nameee");
-      System.out.println("amit pagal ");
    }
 }

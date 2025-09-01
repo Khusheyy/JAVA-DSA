@@ -1,6 +1,6 @@
 package trees;
 
-class SegmentTree {
+public class SegmentTree {
 
     private static class Node {
         int data;
@@ -30,7 +30,7 @@ class SegmentTree {
             return leaf;
         }
 
-        // create new node with index you are at
+        // create new node with index you are currently at
         Node node = new Node(start, end);
 
         int mid = (start + end) / 2;
@@ -38,6 +38,7 @@ class SegmentTree {
         node.left = this.constructTree(arr, start, mid);
         node.right = this.constructTree(arr, mid + 1, end);
 
+        // every node is split into 2 and then when it is returned their data = node.left.data + node.right.data
         node.data = node.left.data + node.right.data;
         return node;
     }
@@ -49,16 +50,16 @@ class SegmentTree {
         String str = "";
 
         if(node.left != null) {
-            str = str + "Interval=[" + node.left.startInterval + "-" + node.left.endInterval + "] and data: " + node.left.data + " => ";
+            str = str + "Interval=[" + node.left.startInterval + "," + node.left.endInterval + "] and data: " + node.left.data + " => ";
         } else {
             str = str + "No left child";
         }
 
         // for current node
-        str = str + "Interval=[" + node.startInterval + "-" + node.endInterval + "] and data: " + node.data + " <= ";
+        str = str + "Interval=[" + node.startInterval + "," + node.endInterval + "] and data: " + node.data + " <= ";
 
         if(node.right != null) {
-            str = str + "Interval=[" + node.right.startInterval + "-" + node.right.endInterval + "] and data: " + node.right.data;
+            str = str + "Interval=[" + node.right.startInterval + "," + node.right.endInterval + "] and data: " + node.right.data;
         } else {
             str = str + "No right child";
         }
@@ -108,6 +109,10 @@ class SegmentTree {
             }
         }
         return node.data;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("SegmentTree program loaded successfully!");
     }
 
 }

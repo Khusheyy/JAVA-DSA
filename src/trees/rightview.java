@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Queue;
 import trees.TreeNode;
 
-public class AvgofeachLevel {
-   public static List<Double> averageOfLevels(TreeNode root) {
-      List<Double> result = new LinkedList();
+public class rightview {
+   public List<Integer> rightSideView(TreeNode root) {
+      List<Integer> result = new LinkedList();
       if (root == null) {
          return result;
       } else {
@@ -16,12 +16,14 @@ public class AvgofeachLevel {
 
          while(!queue.isEmpty()) {
             int levelsize = queue.size();
-            double avg = 0.0D;
             new LinkedList();
 
             for(int i = 0; i < levelsize; ++i) {
                TreeNode currnode = (TreeNode)queue.poll();
-               avg += (double)currnode.val;
+               if (i == levelsize - 1) {
+                  result.add(currnode.val);
+               }
+
                if (currnode.left != null) {
                   queue.offer(currnode.left);
                }
@@ -30,9 +32,6 @@ public class AvgofeachLevel {
                   queue.offer(currnode.right);
                }
             }
-
-            avg /= (double)levelsize;
-            result.add(avg);
          }
 
          return result;
@@ -40,7 +39,6 @@ public class AvgofeachLevel {
    }
 
    public static void main(String[] args) {
-      System.out.println("sayy myyyy nameee");
-      System.out.println("amit pagal ");
+      System.out.println();
    }
 }
