@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class sucessor {
-   public List<List<Integer>> levelOrder(TREES.sucessor.TreeNode root, int key) {
+   public List<List<Integer>> levelOrder(TreeNode root, int key) {
       new LinkedList();
       if (root == null) {
          return null;
