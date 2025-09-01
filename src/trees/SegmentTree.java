@@ -1,6 +1,6 @@
 package trees;
 
-class Segment_tree {
+class SegmentTree {
 
     private static class Node {
         int data;
