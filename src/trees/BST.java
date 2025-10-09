@@ -1,7 +1,9 @@
 package trees;
 
+import java.util.*;
+
 public class BST {
-    public class Node{
+    public static class Node{
         private int value;
         private int height;
         private Node left;
@@ -104,8 +106,15 @@ public class BST {
         // check whether the diff in height at the same level is 1 or less than 1 , and do the same for the sub tree
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
+        Node node = new Node();
+
+
+        System.out.println("enter the elements: ");
+        s
+
         System.out.println("BST program loaded successfully!");
+
     }
 
 }

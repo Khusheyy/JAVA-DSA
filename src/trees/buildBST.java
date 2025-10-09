@@ -21,6 +21,7 @@ public class buildBST {
    }
 
    public static void main(String[] args) {
+      System.out.println("main function");
       System.out.println();
    }
 }
